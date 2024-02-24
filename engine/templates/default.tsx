@@ -1,10 +1,13 @@
 import { ReactElement } from 'react';
 import {
-  ContentWrapper,
+  PortfolioMdProvider,
   Footer,
   Header,
+  Content,
   Wrapper,
 } from '@portfolio.md/components';
+import Link from 'next/link';
+import Image from 'next/image';
 
 import {
   RenderContentOptions,
@@ -29,6 +32,8 @@ export default class DefaultTemplate extends Template {
           url: url,
         }}
         menu={options.menu}
+        LinkComponent={Link}
+        ImageComponent={Image}
       />
     );
   }
@@ -45,17 +50,20 @@ export default class DefaultTemplate extends Template {
           title: title,
           url: url,
         }}
+        LinkComponent={Link}
       />
     );
   }
 
   renderWrapper(options: RenderWrapperOptions): ReactElement {
-    return <Wrapper key="wrapper">{options.children}</Wrapper>;
+    return (
+      <PortfolioMdProvider key="provider">
+        <Wrapper>{options.children}</Wrapper>
+      </PortfolioMdProvider>
+    );
   }
 
   renderContent(options: RenderContentOptions): ReactElement {
-    return (
-      <ContentWrapper key="content-wrapper">{options.children}</ContentWrapper>
-    );
+    return <Content key="content">{options.children}</Content>;
   }
 }

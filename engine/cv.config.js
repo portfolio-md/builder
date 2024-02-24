@@ -10,11 +10,11 @@ module.exports = {
   menu: [
     {
       title: 'Projects',
-      url: 'pages/projects',
+      url: '/pages/projects',
     },
     {
       title: 'LeetCode solutions',
-      url: 'pages/leetcode',
+      url: '/pages/leetcode',
     },
   ],
   pages: {
@@ -30,6 +30,6 @@ module.exports = {
   credentials: {
     title: 'Example CV',
     year: 2024,
-    url: '.',
+    url: '/',
   },
 };
