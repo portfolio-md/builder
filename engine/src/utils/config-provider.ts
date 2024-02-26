@@ -1,5 +1,7 @@
 import { CvConfig, Template } from '@portfolio.md/configuration';
 import { getTemplate } from '@portfolio.md/templates';
+import fs from 'fs';
+import path from 'path';
 
 type GetConfigResult = {
   config: CvConfig;
@@ -13,7 +15,10 @@ interface ConfigProvider {
 
 class FileConfigProvider implements ConfigProvider {
   async getConfig() {
-    const config = await import('../../../cv.config');
+    const file = fs
+      .readFileSync(path.join(process.cwd(), 'cv.config.json'))
+      .toString('utf-8');
+    const config = JSON.parse(file);
 
     return {
       config,

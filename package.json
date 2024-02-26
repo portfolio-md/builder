@@ -1,15 +1,19 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.0",
+  "version": "0.0.11",
   "license": "MIT",
   "scripts": {
-    "build-engine": "npx tsc --build engine/tsconfig.lib.json && tsc-alias -p engine/tsconfig.lib.json"
+    "build": "next build dist/engine",
+    "dev": "next dev dist/engine"
   },
-  "private": true,
+  "bin": {
+    "portfolio-md": "bin/portfolio.md.js"
+  },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.1.0",
+    "@nx/next": "^18.0.4",
     "@portfolio.md/components": "^0.0.27",
     "next": "14.0.4",
     "next-mdx-remote": "^4.4.1",
@@ -21,7 +25,6 @@
     "@nx/eslint": "18.0.4",
     "@nx/eslint-plugin": "18.0.4",
     "@nx/js": "18.0.4",
-    "@nx/next": "^18.0.4",
     "@nx/vite": "18.0.4",
     "@nx/web": "18.0.4",
     "@nx/workspace": "18.0.4",
@@ -46,7 +49,6 @@
     "prettier": "^2.6.2",
     "tsc-alias": "^1.8.8",
     "typescript": "~5.3.2",
-    "verdaccio": "^5.0.4",
     "vite": "~5.0.0",
     "vite-plugin-dts": "~2.3.0",
     "vitest": "^1.0.4"

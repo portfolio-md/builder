@@ -22,8 +22,6 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "../engine/.next/types/**/*.ts",
-    "../dist/engine/.next/types/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],
@@ -31,6 +29,8 @@
     "node_modules",
     "jest.config.ts",
     "**/*.spec.ts",
-    "**/*.test.ts"
+    "**/*.test.ts",
+    "out/**/*",
+    ".next/**/*"
   ]
 }

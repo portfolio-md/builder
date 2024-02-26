@@ -1,13 +1,20 @@
 {
-  "name": "@portfolio.md/builder",
+  "name": "builder",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "targets": {
-    "local-registry": {
-      "executor": "@nx/js:verdaccio",
+    "build": {
+      "executor": "nx:run-commands",
       "options": {
-        "port": 4873,
-        "config": ".verdaccio/config.yml",
-        "storage": "tmp/local-registry/storage"
+        "command": "tsc --build engine/tsconfig.lib.json && tsc-alias -p engine/tsconfig.lib.json"
+      }
+    },
+    "publish": {
+      "dependsOn": [
+        "build"
+      ],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm publish"
       }
     }
   }
