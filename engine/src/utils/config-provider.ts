@@ -13,7 +13,7 @@ interface ConfigProvider {
 
 class FileConfigProvider implements ConfigProvider {
   async getConfig() {
-    const config = await import('../../cv.config');
+    const config = await import('../../../cv.config');
 
     return {
       config,

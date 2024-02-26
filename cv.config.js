@@ -1,5 +1,5 @@
 /**
- * @type {import('@portfolio.md/builder').CvConfig}
+ * @type {import('@portfolio.md/configuration').CvConfig}
  **/
 module.exports = {
   template: 'default',
