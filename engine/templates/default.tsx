@@ -5,11 +5,14 @@ import {
   Header,
   Content,
   Wrapper,
+  Article,
 } from '@portfolio.md/components';
 import Link from 'next/link';
 import Image from 'next/image';
+import { MDXComponents } from 'mdx/types';
 
 import {
+  RenderArticleOptions,
   RenderContentOptions,
   RenderFooterOptions,
   RenderHeaderOptions,
@@ -65,5 +68,13 @@ export default class DefaultTemplate extends Template {
 
   renderContent(options: RenderContentOptions): ReactElement {
     return <Content key="content">{options.children}</Content>;
+  }
+
+  renderArticle(options: RenderArticleOptions): ReactElement {
+    return <Article key="article">{options.children}</Article>;
+  }
+
+  getOverwriteMdxComponents(): MDXComponents {
+    return {};
   }
 }

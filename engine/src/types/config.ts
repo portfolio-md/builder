@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { MDXProvider } from '@mdx-js/react';
 
 export type MenuItem = {
   title: string;
@@ -52,17 +53,27 @@ export type RenderContentOptions = {
   children: React.ReactNode;
 };
 
+export type RenderArticleOptions = {
+  children: React.ReactNode;
+};
+
 export type RenderOptions = {
   header: RenderHeaderOptions;
   footer: RenderFooterOptions;
   content: RenderContentOptions;
 };
 
+export type MDXComponents = React.ComponentProps<
+  typeof MDXProvider
+>['components'];
+
 export abstract class Template {
   abstract renderHeader(options: RenderHeaderOptions): ReactElement;
   abstract renderFooter(options: RenderFooterOptions): ReactElement;
   abstract renderWrapper(options: RenderWrapperOptions): ReactElement;
   abstract renderContent(options: RenderContentOptions): ReactElement;
+  abstract renderArticle(options: RenderArticleOptions): ReactElement;
+  abstract getOverwriteMdxComponents(): MDXComponents;
 
   render(options: RenderOptions) {
     return this.renderWrapper({
