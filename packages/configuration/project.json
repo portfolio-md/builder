@@ -1,0 +1,19 @@
+{
+  "name": "configuration",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/configuration/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/configuration",
+        "main": "packages/configuration/src/index.ts",
+        "tsConfig": "packages/configuration/tsconfig.lib.json",
+        "assets": ["packages/configuration/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

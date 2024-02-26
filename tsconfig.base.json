@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@portfolio.md/builder": ["engine/src/index.ts"],
+      "@portfolio.md/configuration": ["packages/configuration/src/index.ts"],
       "@portfolio.md/templates": ["packages/templates/src/index.ts"]
     }
   },

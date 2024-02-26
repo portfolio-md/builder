@@ -18,7 +18,7 @@ import {
   RenderHeaderOptions,
   RenderWrapperOptions,
   Template,
-} from '../src/types/config';
+} from '@portfolio.md/configuration';
 
 import '@portfolio.md/components/style.css';
 

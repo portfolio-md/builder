@@ -1,4 +1,4 @@
-import { CvConfig, Template } from '../types/config';
+import { CvConfig, Template } from '@portfolio.md/configuration';
 
 type GetConfigResult = {
   config: CvConfig;
@@ -11,10 +11,13 @@ interface ConfigProvider {
 }
 
 class FileConfigProvider implements ConfigProvider {
-  async getConfig(): Promise<GetConfigResult> {
+  async getConfig() {
     const config = await import('../../cv.config');
-    const Template = (await import(`../../templates/${config.template}`))
-      .default;
+    // const Template = (await import(`../../templates/${config.template}`))
+    //   .default;
+
+    const templates = await import('@portfolio.md/templates');
+    const Template = templates['Default'];
 
     return {
       config,
