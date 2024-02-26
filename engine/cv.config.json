@@ -15,13 +15,13 @@
     }
   ],
   "pages": {
-    "main": "file: ///content/cv.md",
-    "projects": "file: ///content/projects.md",
-    "leetcode": "file: ///content/leetcode-solutions.mdx"
+    "main": "file:///content/cv.md",
+    "projects": "file:///content/projects.md",
+    "leetcode": "file:///content/leetcode-solutions.mdx"
   },
   "socials": [
     {
-      "url": "https: //github.com/dmytrobaida"
+      "url": "https://github.com/dmytrobaida"
     }
   ],
   "credentials": {
