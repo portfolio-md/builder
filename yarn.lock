@@ -1677,10 +1677,10 @@
   dependencies:
     esquery "^1.4.0"
 
-"@portfolio.md/components@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@portfolio.md/components/-/components-0.0.23.tgz#0a5c4413e23ee00e3abcf8f0078a18bc6d590e4d"
-  integrity sha512-Ll56W6z+2iArxjiIcme2hT0R8zAG+2uLtCF9CxiF+754lJmUoJj7rQYD1MPaaAo3R7G0sqcPVpqRcKHzpj/ntA==
+"@portfolio.md/components@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@portfolio.md/components/-/components-0.0.26.tgz#00a7c3115389ec2e664ab3c58824b8a620641d96"
+  integrity sha512-j+BzhiEeoc9EizTNlEu/DYrMBEbKYH38oxmsKkf8TCsk0QXVzPqa78IpFsJNJO2i6K4m+6393IXDty2ULFJ9DA==
 
 "@rushstack/eslint-patch@^1.3.3":
   version "1.7.2"
