@@ -4,6 +4,11 @@
     "title": "Example CV",
     "description": "Example CV description"
   },
+  "home": {
+    "title": "Example CV",
+    "logoName": "logo",
+    "url": "/"
+  },
   "menu": [
     {
       "title": "Projects",
@@ -28,5 +33,8 @@
     "title": "Example CV",
     "year": 2024,
     "url": "/"
+  },
+  "images": {
+    "logo": "file:///content/portfolio.svg"
   }
 }

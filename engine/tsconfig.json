@@ -31,6 +31,7 @@
     "**/*.spec.ts",
     "**/*.test.ts",
     "out/**/*",
-    ".next/**/*"
+    ".next/**/*",
+    "next.nx.config.js"
   ]
 }

@@ -16,8 +16,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { config, template } = await ConfigService.getConfig();
-  const { menu, socials, credentials } = config;
+  const { config, template, images } = await ConfigService.getConfig();
+  const { home, menu, socials, credentials } = config;
 
   return (
     <html lang="en">
@@ -25,9 +25,9 @@ export default async function RootLayout({
         {template.render({
           header: {
             home: {
-              title: credentials.title,
-              url: credentials.url,
-              logo: '/portfolio.svg',
+              title: home.title,
+              url: home.url,
+              logo: images[home.logoName],
             },
             menu: menu,
           },

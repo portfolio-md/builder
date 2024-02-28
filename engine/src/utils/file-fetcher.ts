@@ -4,20 +4,20 @@ import path from 'path';
 
 const loadFileAsync = promisify(fs.readFile);
 
-export class MdxFetcher {
-  static async fetchMdx(url: string, basePath = ''): Promise<string> {
+export class FileFetcher {
+  static async fetchFile(url: string, basePath = ''): Promise<Buffer> {
     const { protocol, pathname } = new URL(url);
 
     switch (protocol) {
       case 'file:': {
         const buffer = await loadFileAsync(path.join(basePath, pathname));
-        return buffer.toString('utf-8');
+        return buffer;
       }
 
       default: {
         const res = await fetch(url);
-        const text = await res.text();
-        return text;
+        const arrayBuffer = await res.arrayBuffer();
+        return Buffer.from(arrayBuffer);
       }
     }
   }

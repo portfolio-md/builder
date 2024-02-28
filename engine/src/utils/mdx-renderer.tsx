@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 import { ConfigService } from './config-provider';
-import { MdxFetcher } from './mdx-fetcher';
+import { FileFetcher } from './file-fetcher';
 
 export default async function mdxRenderer(page: string) {
   const { config, basePath, template } = await ConfigService.getConfig();
@@ -10,13 +10,13 @@ export default async function mdxRenderer(page: string) {
     return null;
   }
 
-  const mdxText = await MdxFetcher.fetchMdx(config.pages[page], basePath);
+  const mdxFile = await FileFetcher.fetchFile(config.pages[page], basePath);
 
   return template.renderArticle({
     children: (
       <MDXRemote
         components={template.getOverwriteMdxComponents()}
-        source={mdxText}
+        source={mdxFile}
       />
     ),
   });

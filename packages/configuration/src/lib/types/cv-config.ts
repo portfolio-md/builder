@@ -19,6 +19,11 @@ export type CvConfig = {
     title: string;
     description: string;
   };
+  home: {
+    title: string;
+    url: string;
+    logoName: string;
+  };
   menu: MenuItem[];
   pages: {
     main: string;
@@ -26,4 +31,7 @@ export type CvConfig = {
   };
   socials: SocialItem[];
   credentials: Credentials;
+  images: {
+    [name: string]: string;
+  };
 };
