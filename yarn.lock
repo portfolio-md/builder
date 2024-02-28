@@ -1859,10 +1859,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.24.tgz#58601079e11784d20f82d0585865bb42305c4df3"
   integrity sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ==
 
-"@portfolio.md/components@^0.0.27":
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/@portfolio.md/components/-/components-0.0.27.tgz#d1c2195e8c88cdf7938de9b50ce00b7d71c13065"
-  integrity sha512-FIx3qoVxp7y5p91SGjPzkqY9gDxL3/MWTjHWbBB1gVlOzdbVgp20+/HBcCZzPvwZlsRanILzMBli9BYkoMJB2g==
+"@portfolio.md/components@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@portfolio.md/components/-/components-0.0.29.tgz#b9e3b1973a3c0bd2da8e7783c228c6aaf89adc5a"
+  integrity sha512-Z54uXi768DvgLdeuI1b88xuYRPMtq2PQb7vTnfoc/cOEGsREgpIa3djrTFtpLvgZaeTRvmjwUX7dpLuSL/djzQ==
 
 "@rollup/pluginutils@^5.0.2":
   version "5.1.0"
