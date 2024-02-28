@@ -1,6 +1,6 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "license": "MIT",
   "scripts": {
     "build": "next build dist/engine",
@@ -10,15 +10,13 @@
     "portfolio-md": "bin/portfolio.md.js"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.1.0",
     "@portfolio.md/components": "0.0.31",
     "datauri": "^4.1.0",
     "next": "14.0.4",
     "next-mdx-remote": "^4.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "remark-gfm": "^3.0.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -32,7 +30,6 @@
     "@swc-node/register": "~1.8.0",
     "@swc/core": "~1.3.85",
     "@swc/helpers": "~0.5.2",
-    "@types/mdx": "^2.0.11",
     "@types/node": "18.16.9",
     "@types/react": "18.2.33",
     "@types/react-dom": "18.2.14",

@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 
 import { ConfigService } from './config-provider';
 import { FileFetcher } from './file-fetcher';
@@ -17,6 +18,11 @@ export default async function mdxRenderer(page: string) {
       <MDXRemote
         components={template.getOverwriteMdxComponents()}
         source={mdxFile}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        }}
       />
     ),
   });
