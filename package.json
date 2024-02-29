@@ -1,6 +1,6 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.26",
+  "version": "0.0.29",
   "license": "MIT",
   "bin": {
     "portfolio-md": "bin/portfolio.md.js"
@@ -15,7 +15,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "^3.0.1",
-    "sharp": "^0.33.2",
     "showdown": "^2.1.0",
     "tslib": "^2.3.0"
   },

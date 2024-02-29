@@ -8,8 +8,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const { config } = await ConfigService.getConfig();
   const { images } = await iconsGenerator();
 
-  console.log(images);
-
   return {
     title: config.meta.title,
     description: config.meta.description,
