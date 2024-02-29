@@ -1,13 +1,23 @@
 import { Metadata } from 'next';
 
 import { ConfigService } from '../utils/config-provider';
+import iconsGenerator from '../utils/icons-generator';
+import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { config } = await ConfigService.getConfig();
+  const { images } = await iconsGenerator();
+
+  console.log(images);
 
   return {
     title: config.meta.title,
     description: config.meta.description,
+    icons: {
+      other: images.map<IconDescriptor>((image) => ({
+        url: '/icons/' + image.name,
+      })),
+    },
   };
 }
 
@@ -34,7 +44,7 @@ export default async function RootLayout({
             home: {
               title: home.title,
               url: home.url,
-              logo: images[home.logoName],
+              logo: images[home.logoName].dataUri,
             },
             menu: menu,
           },

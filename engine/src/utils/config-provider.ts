@@ -13,7 +13,10 @@ type GetConfigResult = {
   basePath: string;
   template: Template;
   images: {
-    [name: string]: string;
+    [name: string]: {
+      dataUri: string;
+      file: Buffer;
+    };
   };
 };
 
@@ -51,7 +54,10 @@ class FileConfigProvider implements ConfigProvider {
         continue;
       }
 
-      result[name] = dataUri;
+      result[name] = {
+        dataUri: dataUri,
+        file: file,
+      };
     }
 
     return result;
