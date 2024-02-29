@@ -10,8 +10,12 @@ const srcDir = 'node_modules/@portfolio.md/builder/dist/engine/out';
 const destDir = './dist';
 
 spawn(
-  'yarn',
-  ['next', command, 'node_modules/@portfolio.md/builder/dist/engine'],
+  'node',
+  [
+    'node_modules/.bin/next',
+    command,
+    'node_modules/@portfolio.md/builder/dist/engine',
+  ],
   {
     stdio: 'inherit',
   }
