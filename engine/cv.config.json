@@ -18,8 +18,7 @@
       "file": "file:///content/projects.md",
       "genPdf": true,
       "menu": {
-        "title": "Projects",
-        "url": "/pages/projects"
+        "title": "Projects"
       }
     }
   },
@@ -35,5 +34,9 @@
   },
   "images": {
     "logo": "file:///content/portfolio.svg"
+  },
+  "cv": {
+    "name": "main",
+    "title": "Download CV"
   }
 }

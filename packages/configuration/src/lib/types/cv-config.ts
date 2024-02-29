@@ -1,6 +1,6 @@
 export type MenuItem = {
   title: string;
-  url: string;
+  url?: string;
 };
 
 export type SocialItem = {
@@ -38,5 +38,9 @@ export type CvConfig = {
   credentials: Credentials;
   images: {
     [name: string]: string;
+  };
+  cv?: {
+    name: string;
+    title: string;
   };
 };

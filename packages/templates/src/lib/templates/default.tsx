@@ -35,6 +35,7 @@ export default class DefaultTemplate extends Template {
           url: url,
         }}
         menu={options.menu}
+        download={options.download}
         LinkComponent={Link}
         ImageComponent={Image}
       />

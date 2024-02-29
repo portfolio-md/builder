@@ -1,20 +1,31 @@
 import { MDXProvider } from '@mdx-js/react';
 import { ReactElement } from 'react';
 
-import { Credentials, MenuItem, SocialItem } from './cv-config';
-
 export type RenderHeaderOptions = {
   home: {
     title: string;
     logo: string;
     url: string;
   };
-  menu: MenuItem[];
+  menu: {
+    title: string;
+    url: string;
+  }[];
+  download?: {
+    title: string;
+    url: string;
+  };
 };
 
 export type RenderFooterOptions = {
-  socials: SocialItem[];
-  credentials: Credentials;
+  socials: {
+    url: string;
+  }[];
+  credentials: {
+    year: number;
+    title: string;
+    url: string;
+  };
 };
 
 export type RenderWrapperOptions = {

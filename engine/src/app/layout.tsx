@@ -13,14 +13,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: config.meta.description,
     icons: {
       other: images.map<IconDescriptor>((image) => ({
-        url: '/icons/' + image.name,
+        url: '/icon/' + image.name,
       })),
     },
   };
-}
-
-function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
-  return value != null && value != undefined;
 }
 
 export default async function RootLayout({
@@ -28,33 +24,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { config, template, images } = await ConfigService.getConfig();
-  const { home, socials, credentials, pages } = config;
-  const menu = Object.values(pages)
-    .map((page) => page.menu)
-    .filter(notEmpty);
-
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
-        {template.render({
-          header: {
-            home: {
-              title: home.title,
-              url: home.url,
-              logo: images[home.logoName].dataUri,
-            },
-            menu: menu,
-          },
-          content: {
-            children: children,
-          },
-          footer: {
-            socials: socials,
-            credentials: credentials,
-          },
-        })}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
