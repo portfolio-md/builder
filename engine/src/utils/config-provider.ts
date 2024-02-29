@@ -23,26 +23,28 @@ interface ConfigProvider {
 
 class FileConfigProvider implements ConfigProvider {
   async getConfig() {
+    const basePath = process.cwd();
     const file = fs
-      .readFileSync(path.join(process.cwd(), 'cv.config.json'))
+      .readFileSync(path.join(basePath, 'cv.config.json'))
       .toString('utf-8');
     const config: CvConfig = JSON.parse(file);
 
     return {
       config,
-      basePath: process.cwd(),
+      basePath: basePath,
       template: getTemplate(config.template),
-      images: await this.getImages(config.images),
+      images: await this.getImages(config.images, basePath),
     };
   }
 
   async getImages(
-    images: CvConfig['images']
+    images: CvConfig['images'],
+    basePath: string
   ): Promise<GetConfigResult['images']> {
     const result: GetConfigResult['images'] = {};
 
     for (const name in images) {
-      const file = await FileFetcher.fetchFile(images[name], process.cwd());
+      const file = await FileFetcher.fetchFile(images[name], basePath);
       const dataUri = dataUriParser.format(images[name], file).content;
 
       if (dataUri == null) {

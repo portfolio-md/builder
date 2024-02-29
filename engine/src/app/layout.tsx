@@ -11,13 +11,20 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+  return value != null && value != undefined;
+}
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const { config, template, images } = await ConfigService.getConfig();
-  const { home, menu, socials, credentials } = config;
+  const { home, socials, credentials, pages } = config;
+  const menu = Object.values(pages)
+    .map((page) => page.menu)
+    .filter(notEmpty);
 
   return (
     <html lang="en">

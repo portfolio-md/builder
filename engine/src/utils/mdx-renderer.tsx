@@ -11,7 +11,10 @@ export default async function mdxRenderer(page: string) {
     return null;
   }
 
-  const mdxFile = await FileFetcher.fetchFile(config.pages[page], basePath);
+  const mdxFile = await FileFetcher.fetchFile(
+    config.pages[page].file,
+    basePath
+  );
 
   return template.renderArticle({
     children: (

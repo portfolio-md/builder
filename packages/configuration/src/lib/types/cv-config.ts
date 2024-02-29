@@ -13,6 +13,12 @@ export type Credentials = {
   url: string;
 };
 
+export type Page = {
+  file: string;
+  genPdf: boolean;
+  menu?: MenuItem;
+};
+
 export type CvConfig = {
   template: string;
   meta: {
@@ -24,10 +30,9 @@ export type CvConfig = {
     url: string;
     logoName: string;
   };
-  menu: MenuItem[];
   pages: {
-    main: string;
-    [page: string]: string;
+    main: Page;
+    [page: string]: Page;
   };
   socials: SocialItem[];
   credentials: Credentials;

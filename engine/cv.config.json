@@ -9,16 +9,19 @@
     "logoName": "logo",
     "url": "/"
   },
-  "menu": [
-    {
-      "title": "Projects",
-      "url": "/pages/projects"
-    }
-  ],
   "pages": {
-    "main": "file:///content/cv.md",
-    "projects": "file:///content/projects.md",
-    "leetcode": "file:///content/leetcode-solutions.mdx"
+    "main": {
+      "file": "file:///content/cv.md",
+      "genPdf": true
+    },
+    "projects": {
+      "file": "file:///content/projects.md",
+      "genPdf": true,
+      "menu": {
+        "title": "Projects",
+        "url": "/pages/projects"
+      }
+    }
   },
   "socials": [
     {
