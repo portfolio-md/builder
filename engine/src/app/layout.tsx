@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { ConfigService } from '../utils/config-provider';
 import iconsGenerator from '../utils/icons-generator';
@@ -24,9 +25,14 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { config } = await ConfigService.getConfig();
+  const { analytics } = config;
+  const gTag = analytics?.gTag;
+
   return (
     <html lang="en">
       <body>{children}</body>
+      {gTag && <GoogleAnalytics gaId={gTag} />}
     </html>
   );
 }

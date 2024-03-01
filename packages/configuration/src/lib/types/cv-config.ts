@@ -39,4 +39,7 @@ export type CvConfig = {
   images: {
     [name: string]: string;
   };
+  analytics?: {
+    gTag?: string;
+  };
 };
