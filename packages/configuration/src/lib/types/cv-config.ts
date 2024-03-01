@@ -17,6 +17,7 @@ export type Page = {
   file: string;
   genPdf: boolean;
   menu?: MenuItem;
+  isMain?: boolean;
 };
 
 export type CvConfig = {
@@ -31,16 +32,11 @@ export type CvConfig = {
     logoName: string;
   };
   pages: {
-    main: Page;
     [page: string]: Page;
   };
   socials: SocialItem[];
   credentials: Credentials;
   images: {
     [name: string]: string;
-  };
-  cv?: {
-    name: string;
-    title: string;
   };
 };

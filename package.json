@@ -1,6 +1,6 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "license": "MIT",
   "bin": {
     "portfolio-md": "bin/portfolio.md.js"

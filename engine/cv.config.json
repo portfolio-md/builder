@@ -10,9 +10,10 @@
     "url": "/"
   },
   "pages": {
-    "main": {
+    "cv": {
       "file": "file:///content/cv.md",
-      "genPdf": true
+      "genPdf": true,
+      "isMain": true
     },
     "projects": {
       "file": "file:///content/projects.md",
@@ -34,9 +35,5 @@
   },
   "images": {
     "logo": "file:///content/portfolio.svg"
-  },
-  "cv": {
-    "name": "main",
-    "title": "Download CV"
   }
 }
