@@ -2213,18 +2213,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/third-parties@npm:14.1.0":
-  version: 14.1.0
-  resolution: "@next/third-parties@npm:14.1.0"
-  dependencies:
-    third-party-capital: "npm:1.0.20"
-  peerDependencies:
-    next: ^13.0.0 || ^14.0.0
-    react: ^18.2.0
-  checksum: 10c0/39df592ddc26b39ce0512201202f78f297440f03e2df2cbd1211869960eea2592eed6f1d520dc7675bd33e68a92be823999a6d951e7bfa95460e2b218a61effa
-  languageName: node
-  linkType: hard
-
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2718,7 +2706,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@portfolio.md/builder@workspace:."
   dependencies:
-    "@next/third-parties": "npm:14.1.0"
     "@nx/eslint": "npm:18.0.4"
     "@nx/eslint-plugin": "npm:18.0.4"
     "@nx/js": "npm:18.0.4"
@@ -13455,13 +13442,6 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: 10c0/02805740c12851ea5982686810702e2f14369a5f4c5c40a836821e3eefc65ffeec3131ba324692a37608294b0fd8c1e55a2dd571ffed4909822787668ddbee5c
-  languageName: node
-  linkType: hard
-
-"third-party-capital@npm:1.0.20":
-  version: 1.0.20
-  resolution: "third-party-capital@npm:1.0.20"
-  checksum: 10c0/7f45ff156ec9d7e2957a5b39061be22b780ffbd2d93c127252d908e2bff6cdd09f827a95909d457c8096e036f155006a38e355a06ee11cb6d63c7f4b150bbfb0
   languageName: node
   linkType: hard
 

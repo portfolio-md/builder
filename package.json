@@ -1,12 +1,11 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "license": "MIT",
   "bin": {
     "portfolio-md": "bin/portfolio.md.js"
   },
   "dependencies": {
-    "@next/third-parties": "14.1.0",
     "@portfolio.md/components": "0.0.39",
     "datauri": "^4.1.0",
     "favicons": "^7.1.5",
