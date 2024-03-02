@@ -1,5 +1,6 @@
-import { redirect } from 'next/navigation';
 import { ConfigService } from '../utils/config-provider';
+import PageLayout from './[slug]/layout';
+import mdxRenderer from '../utils/mdx-renderer';
 
 export default async function Index() {
   const { config } = await ConfigService.getConfig();
@@ -13,5 +14,7 @@ export default async function Index() {
     throw new Error('There are more than 1 main page!');
   }
 
-  return redirect(pages[0]);
+  const child = await mdxRenderer(pages[0]);
+
+  return <PageLayout params={{ slug: pages[0] }}>{child}</PageLayout>;
 }

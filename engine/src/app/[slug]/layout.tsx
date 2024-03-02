@@ -1,7 +1,7 @@
 import { getMenu } from '../../utils/common';
 import { ConfigService } from '../../utils/config-provider';
 
-export default async function RootLayout({
+export default async function PageLayout({
   children,
   params,
 }: {
