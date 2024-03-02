@@ -31,15 +31,17 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <head>
+      <body>
+        {children}{' '}
         {gTag && (
           <>
             <Script
               async
               src={`https://www.googletagmanager.com/gtag/js?id=${gTag}`}
+              strategy="beforeInteractive"
             />
 
-            <Script id="google-analytics">
+            <Script id="google-analytics" strategy="beforeInteractive">
               {`window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -47,8 +49,7 @@ export default async function RootLayout({
             </Script>
           </>
         )}
-      </head>
-      <body>{children}</body>
+      </body>
     </html>
   );
 }
