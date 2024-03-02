@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Script from 'next/script';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { ConfigService } from '../utils/config-provider';
 import iconsGenerator from '../utils/icons-generator';
@@ -31,25 +31,8 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body>
-        {children}{' '}
-        {gTag && (
-          <>
-            <Script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gTag}`}
-              strategy="beforeInteractive"
-            />
-
-            <Script id="google-analytics" strategy="beforeInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', "${gTag}");`}
-            </Script>
-          </>
-        )}
-      </body>
+      <body>{children}</body>
+      {gTag && <GoogleAnalytics gaId={gTag} />}
     </html>
   );
 }
