@@ -25,6 +25,9 @@ export type CvConfig = {
   meta: {
     title: string;
     description: string;
+    verification?: {
+      google: string;
+    };
   };
   home: {
     title: string;

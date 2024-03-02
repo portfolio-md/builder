@@ -12,6 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: config.meta.title,
     description: config.meta.description,
+    verification: {
+      google: config.meta.verification?.google,
+    },
     icons: {
       other: images.map<IconDescriptor>((image) => ({
         url: '/icon/' + image.name,
