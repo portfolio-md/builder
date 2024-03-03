@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@portfolio.md/configuration": ["packages/configuration/src/index.ts"],
+      "@portfolio.md/scaffolder": ["packages/scaffolder/src/index.ts"],
       "@portfolio.md/templates": ["packages/templates/src/index.ts"]
     }
   },

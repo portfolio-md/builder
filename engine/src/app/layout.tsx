@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
 
 import { ConfigService } from '../utils/config-provider';
 import iconsGenerator from '../utils/icons-generator';
-import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { config } = await ConfigService.getConfig();
