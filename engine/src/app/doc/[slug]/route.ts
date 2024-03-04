@@ -1,7 +1,7 @@
 import { ConfigService } from '../../../utils/config-provider';
 import { FileRenderer } from '../../../utils/file-renderer';
 
-const ext = '.pdf';
+const ext = '.docx';
 
 export async function generateStaticParams() {
   const { config } = await ConfigService.getConfig();
@@ -22,11 +22,12 @@ export async function GET(
   const fileWithExt = params.slug;
   // Remove extension
   const fileName = fileWithExt.substring(0, fileWithExt.length - ext.length);
-  const pdf = await FileRenderer.render(fileName, 'pdf');
+  const pdf = await FileRenderer.render(fileName, 'doc');
 
   return new Response(pdf, {
     headers: {
-      'Content-Type': 'application/pdf',
+      'Content-Type':
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     },
   });
 }
