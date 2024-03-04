@@ -33,7 +33,7 @@ async function getPdf(html: string) {
       </head>
       <body>
         <div class="p-4">
-          <article class="prose prose-sm prose-headings:m-2 prose-p:m-2">${html}</article>
+          <article class="prose prose-sm max-w-none prose-headings:m-2 prose-p:m-2">${html}</article>
         </div>
       </body>
     </html>
