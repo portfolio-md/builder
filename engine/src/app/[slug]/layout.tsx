@@ -14,17 +14,17 @@ export default async function PageLayout({
   const page = pages[params.slug];
   const download: { title: string; url: string }[] = [];
 
-  if (page.genPdf) {
+  if (page.generate?.pdf) {
     download.push({
       title: 'PDF',
       url: `/pdf/${params.slug}.pdf`,
     });
   }
 
-  if (page.genDoc) {
+  if (page.generate?.docx) {
     download.push({
       title: 'DOCX',
-      url: `/doc/${params.slug}.docx`,
+      url: `/docx/${params.slug}.docx`,
     });
   }
 

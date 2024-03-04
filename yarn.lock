@@ -2781,6 +2781,7 @@ __metadata:
     eslint-plugin-react: "npm:7.32.2"
     eslint-plugin-react-hooks: "npm:4.6.0"
     favicons: "npm:^7.1.5"
+    image-size: "npm:^1.1.1"
     next: "npm:14.1.0"
     next-mdx-remote: "npm:^4.4.1"
     nx: "npm:18.0.4"
@@ -9017,6 +9018,17 @@ __metadata:
   bin:
     image-size: bin/image-size.js
   checksum: 10c0/71b531ced2abef11e2a5ba77a533b9229aa10585d252154b039458265978172f890e82a210f5f4467bc7d8a5fe0a501251984a1a9caa66a1f65a6e8dcb136289
+  languageName: node
+  linkType: hard
+
+"image-size@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "image-size@npm:1.1.1"
+  dependencies:
+    queue: "npm:6.0.2"
+  bin:
+    image-size: bin/image-size.js
+  checksum: 10c0/2660470096d12be82195f7e80fe03274689fbd14184afb78eaf66ade7cd06352518325814f88af4bde4b26647889fe49e573129f6e7ba8f5ff5b85cc7f559000
   languageName: node
   linkType: hard
 

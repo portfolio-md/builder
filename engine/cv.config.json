@@ -12,13 +12,18 @@
   "pages": {
     "cv": {
       "file": "file:///content/cv.md",
-      "genPdf": true,
-      "genDoc": true,
+      "generate": {
+        "pdf": true,
+        "docx": true
+      },
       "isMain": true
     },
     "projects": {
       "file": "file:///content/projects.md",
-      "genPdf": true,
+      "generate": {
+        "pdf": true,
+        "docx": true
+      },
       "menu": {
         "title": "Projects"
       }
