@@ -15,7 +15,8 @@ export type Credentials = {
 
 export type Page = {
   file: string;
-  genPdf: boolean;
+  genPdf?: boolean;
+  genDoc?: boolean;
   menu?: MenuItem;
   isMain?: boolean;
 };

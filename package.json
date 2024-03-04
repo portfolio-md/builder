@@ -1,21 +1,21 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "license": "MIT",
   "bin": {
     "portfolio-md": "bin/portfolio.md.js"
   },
   "dependencies": {
     "@next/third-parties": "^14.1.1",
-    "@portfolio.md/components": "0.0.39",
+    "@portfolio.md/components": "0.0.41",
     "datauri": "^4.1.0",
     "favicons": "^7.1.5",
-    "html-to-docx": "^1.8.0",
     "next": "14.1.0",
     "next-mdx-remote": "^4.4.1",
     "puppeteer": "^22.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "remark-docx": "^0.1.6",
     "remark-gfm": "^3.0.1",
     "showdown": "^2.1.0",
     "tslib": "^2.3.0"

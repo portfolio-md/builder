@@ -14,7 +14,7 @@ export type RenderHeaderOptions = {
   download?: {
     title: string;
     url: string;
-  };
+  }[];
 };
 
 export type RenderFooterOptions = {

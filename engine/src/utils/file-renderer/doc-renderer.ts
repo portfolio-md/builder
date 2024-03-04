@@ -1,18 +1,13 @@
-import { Converter } from 'showdown';
-// @ts-expect-error there is no types
-import HTMLtoDOCX from 'html-to-docx';
+import { unified } from 'unified';
+import markdown from 'remark-parse';
+import docx from 'remark-docx';
 
 import { Renderer } from './types';
 
 export class DocRenderer implements Renderer {
-  private converter: Converter = new Converter();
-
-  constructor() {
-    this.converter.setFlavor('github');
-  }
-
   async render(file: Buffer): Promise<Buffer> {
-    const html = this.converter.makeHtml(file.toString('utf-8'));
-    return await HTMLtoDOCX(html);
+    const processor = unified().use(markdown).use(docx, { output: 'buffer' });
+    const doc = await processor.process(file);
+    return doc.result as Buffer;
   }
 }

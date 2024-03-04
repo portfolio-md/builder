@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   const { config } = await ConfigService.getConfig();
   const { pages } = config;
   const pagesToGenerate = Object.keys(pages).filter(
-    (key) => pages[key].genPdf === true
+    (key) => pages[key].genDoc === true
   );
 
   return pagesToGenerate.map((page) => ({

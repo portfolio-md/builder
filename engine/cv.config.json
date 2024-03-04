@@ -13,6 +13,7 @@
     "cv": {
       "file": "file:///content/cv.md",
       "genPdf": true,
+      "genDoc": true,
       "isMain": true
     },
     "projects": {
