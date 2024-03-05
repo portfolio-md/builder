@@ -24,7 +24,7 @@ export type Page = {
 };
 
 export type CvConfig = {
-  template: string;
+  // template: string;
   meta: {
     title: string;
     description: string;

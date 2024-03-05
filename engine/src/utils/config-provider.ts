@@ -1,12 +1,11 @@
 import { CvConfig, Template } from '@portfolio.md/configuration';
 import { getTemplate } from '@portfolio.md/templates';
-import fs from 'fs';
-import path from 'path';
 import DatauriParser from 'datauri/parser';
+import path from 'path';
+import fs from 'fs';
+import * as ts from 'typescript';
 
 import { FileFetcher } from './file-fetcher';
-
-const dataUriParser = new DatauriParser();
 
 type GetConfigResult = {
   config: CvConfig;
@@ -20,27 +19,25 @@ type GetConfigResult = {
   };
 };
 
-interface ConfigProvider {
-  getConfig(): Promise<GetConfigResult>;
-}
+// Facade to remove dependency on concrete implementation
+export class ConfigService {
+  private static dataUriParser = new DatauriParser();
 
-class FileConfigProvider implements ConfigProvider {
-  async getConfig() {
+  static async getConfig() {
     const basePath = process.cwd();
-    const file = fs
-      .readFileSync(path.join(basePath, 'cv.config.json'))
-      .toString('utf-8');
-    const config: CvConfig = JSON.parse(file);
+    const config = ConfigService.loadConfig(basePath);
+    // TODO: implement template loading system
+    const templateName = 'default';
 
     return {
       config,
       basePath: basePath,
-      template: getTemplate(config.template),
+      template: getTemplate(templateName),
       images: await this.getImages(config.images, basePath),
     };
   }
 
-  async getImages(
+  private static async getImages(
     images: CvConfig['images'],
     basePath: string
   ): Promise<GetConfigResult['images']> {
@@ -48,7 +45,7 @@ class FileConfigProvider implements ConfigProvider {
 
     for (const name in images) {
       const file = await FileFetcher.fetchFile(images[name], basePath);
-      const dataUri = dataUriParser.format(images[name], file).content;
+      const dataUri = this.dataUriParser.format(images[name], file).content;
 
       if (dataUri == null) {
         continue;
@@ -62,13 +59,11 @@ class FileConfigProvider implements ConfigProvider {
 
     return result;
   }
-}
 
-// Facade to remove dependency on concrete implementation
-export class ConfigService {
-  private static configProvider: ConfigProvider = new FileConfigProvider();
-
-  static getConfig() {
-    return this.configProvider.getConfig();
+  private static loadConfig(basePath: string): CvConfig {
+    const file = fs.readFileSync(path.join(basePath, 'cv.config.ts'));
+    const fileStr = file.toString('utf-8');
+    const jsProgram = ts.transpile(fileStr);
+    return eval(jsProgram) as CvConfig;
   }
 }

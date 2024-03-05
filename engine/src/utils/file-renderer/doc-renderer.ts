@@ -23,6 +23,7 @@ export class DocRenderer implements Renderer {
             height: height ?? 0,
           };
         },
+        styles: {},
       });
     const doc = await processor.process(file);
     return doc.result as Buffer;

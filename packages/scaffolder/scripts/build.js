@@ -10,7 +10,13 @@ fs.mkdirSync('dist/content');
 
 // Copy templates
 fs.cpSync('../../engine/content', 'dist/content', { recursive: true });
-fs.copyFileSync('../../engine/cv.config.json', 'dist/cv.config.json');
+fs.copyFileSync('../../engine/cv.config.ts', 'dist/cv.config.ts');
+
+// Get builder version
+const packageJson = JSON.parse(
+  fs.readFileSync('../../package.json').toString('utf-8')
+);
+const builderVersion = packageJson.version;
 
 // Create package.json
 const json = `{
@@ -22,7 +28,7 @@ const json = `{
     "build": "portfolio-md build"
   },
   "dependencies": {
-    "@portfolio.md/builder": "*"
+    "@portfolio.md/builder": "${builderVersion}"
   }
 }`;
 
