@@ -2,32 +2,19 @@ import { CvConfig } from '@portfolio.md/builder';
 
 export default {
   meta: {
-    title: 'Example CV',
-    description: 'Example CV description',
+    title: 'portfolio.md',
+    description:
+      'Node.js tool which helps to create static portfolio website with resume',
   },
   home: {
-    title: 'Example CV',
-    logoName: 'logo',
+    title: 'portfolio.md',
+    logo: 'logo',
     url: '/',
   },
   pages: {
-    cv: {
-      file: 'file:///content/cv.md',
-      generate: {
-        pdf: true,
-        docx: true,
-      },
+    main: {
+      file: 'content/main.md',
       isMain: true,
-    },
-    projects: {
-      file: 'file:///content/projects.md',
-      generate: {
-        pdf: true,
-        docx: true,
-      },
-      menu: {
-        title: 'Projects',
-      },
     },
   },
   socials: [
@@ -36,11 +23,11 @@ export default {
     },
   ],
   credentials: {
-    title: 'Example CV',
+    title: 'Dmytro Baida',
     year: 2024,
-    url: '/',
+    url: 'https://dmytrobaida.github.io',
   },
   images: {
-    logo: 'file:///content/portfolio.svg',
+    logo: 'content/logo.svg',
   },
 } satisfies CvConfig;

@@ -13,7 +13,7 @@ export default async function iconsGenerator() {
     config: { home },
     images,
   } = await ConfigService.getConfig();
-  const logoFile = images[home.logoName].file;
+  const logoFile = images[home.logo].file;
 
   icons = await favicons(logoFile, {
     icons: {

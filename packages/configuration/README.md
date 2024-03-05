@@ -1,7 +1,3 @@
-# configuration
+# portfolio.md configuration
 
-This library was generated with [Nx](https://nx.dev).
-
-## Building
-
-Run `nx build configuration` to build the library.
+portfolio.md library configuration

@@ -33,7 +33,7 @@ export default async function PageLayout({
       home: {
         title: home.title,
         url: home.url,
-        logo: images[home.logoName].dataUri,
+        logo: images[home.logo].dataUri,
       },
       menu: menu,
       download: download,

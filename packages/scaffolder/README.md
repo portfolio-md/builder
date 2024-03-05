@@ -1,7 +1,7 @@
-# scaffolder
+# portfolio.md scaffolder
 
-This library was generated with [Nx](https://nx.dev).
+Run script provided below to create new portfolio.md project
 
-## Building
-
-Run `nx build scaffolder` to build the library.
+```bash
+npx @portfolio.md/scaffolder
+```

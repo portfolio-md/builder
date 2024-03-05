@@ -4,6 +4,7 @@
     "rootDir": ".",
     "sourceMap": true,
     "declaration": true,
+    "removeComments": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
