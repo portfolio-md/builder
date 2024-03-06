@@ -13,8 +13,24 @@ export default {
   },
   pages: {
     main: {
-      file: 'content/main.md',
+      file: 'https://raw.githubusercontent.com/portfolio-md/builder/main/README.md',
       isMain: true,
+    },
+    example: {
+      file: 'content/example.md',
+      menu: {
+        title: 'Example',
+      },
+      generate: {
+        pdf: true,
+        docx: true,
+      },
+    },
+    github: {
+      menu: {
+        title: 'GitHub Repo',
+        url: 'https://github.com/portfolio-md/builder',
+      },
     },
   },
   socials: [

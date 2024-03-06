@@ -49,7 +49,7 @@ export type CvConfig = {
       /**
        * Url or path to markdown file of the page
        */
-      file: string;
+      file?: string;
       /**
        * Generate files settings
        */

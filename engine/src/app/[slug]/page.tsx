@@ -3,7 +3,9 @@ import { ConfigService } from '../../utils/config-provider';
 
 export async function generateStaticParams() {
   const { config } = await ConfigService.getConfig();
-  const pages = Object.keys(config.pages);
+  const pages = Object.keys(config.pages).filter(
+    (p) => config.pages[p].file != null
+  );
 
   return pages.map((page) => ({
     slug: page,

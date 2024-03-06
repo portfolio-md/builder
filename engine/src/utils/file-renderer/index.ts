@@ -9,18 +9,19 @@ export class FileRenderer {
 
   static async render(page: string, type: 'pdf' | 'doc') {
     const { config, basePath } = await ConfigService.getConfig();
+    const file = config.pages[page]?.file;
 
-    if (config.pages[page] == null) {
+    if (file == null) {
       throw new Error('Cant find required page!');
     }
 
-    const file = await FileFetcher.fetchFile(config.pages[page].file, basePath);
+    const fileBuf = await FileFetcher.fetchFile(file, basePath);
 
     switch (type) {
       case 'pdf':
-        return await FileRenderer.pdfRenderer.render(file);
+        return await FileRenderer.pdfRenderer.render(fileBuf);
       case 'doc':
-        return await FileRenderer.docRenderer.render(file);
+        return await FileRenderer.docRenderer.render(fileBuf);
     }
   }
 }

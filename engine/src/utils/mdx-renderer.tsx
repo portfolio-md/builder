@@ -8,14 +8,13 @@ import { FileFetcher } from './file-fetcher';
 export default async function mdxRenderer(page: string) {
   const { config, basePath, template } = await ConfigService.getConfig();
 
-  if (config.pages[page] == null) {
+  const file = config.pages[page]?.file;
+
+  if (file == null) {
     return null;
   }
 
-  const mdxFile = await FileFetcher.fetchFile(
-    config.pages[page].file,
-    basePath
-  );
+  const mdxFile = await FileFetcher.fetchFile(file, basePath);
 
   return template.renderArticle({
     children: (
