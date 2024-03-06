@@ -1,6 +1,6 @@
 {
   "name": "@portfolio.md/builder",
-  "version": "0.0.53",
+  "version": "0.0.54",
   "license": "MIT",
   "bin": {
     "portfolio-md": "bin/portfolio.md.js"
@@ -8,7 +8,7 @@
   "main": "dist/engine/src/index.js",
   "dependencies": {
     "@next/third-parties": "^14.1.1",
-    "@portfolio.md/components": "0.0.41",
+    "@portfolio.md/components": "0.0.42",
     "datauri": "^4.1.0",
     "favicons": "^7.1.5",
     "highlight.js": "^11.9.0",

@@ -20,7 +20,7 @@ const builderVersion = packageJson.version;
 
 // Create package.json
 const json = `{
-  "name": "cv",
+  "name": "portfolio.md",
   "version": "1.0.0",
   "private": true,
   "scripts": {
