@@ -33,3 +33,8 @@ const json = `{
 }`;
 
 fs.writeFileSync('dist/package.json', json);
+
+// create .gitignore
+const gitIgnore = `node_modules
+dist`;
+fs.writeFileSync('dist/.gitignore', gitIgnore);

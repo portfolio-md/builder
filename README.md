@@ -17,7 +17,7 @@ cd portfolio
 npx @portfolio.md/scaffolder
 ```
 
-3. To run website run
+3. To start dev server run
 
 ```bash
 npm run dev
@@ -94,7 +94,7 @@ export type CvConfig = {
       /**
        * Url or path to markdown file of the page
        */
-      file: string;
+      file?: string;
       /**
        * Generate files settings
        */
