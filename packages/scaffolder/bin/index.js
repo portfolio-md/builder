@@ -12,8 +12,7 @@ fs.cpSync(path.join(__dirname, '../dist'), dir, { recursive: true });
 
 console.log('Installing packages');
 
-// call yarn install
-spawn('yarn', ['install', '--ignore-engines'], {
+spawn('npm', ['install'], {
   stdio: 'inherit',
 });
 

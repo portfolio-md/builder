@@ -20,13 +20,13 @@ npx @portfolio.md/scaffolder
 3. To run website run
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 4. To build website run
 
 ```bash
-yarn build
+npm run build
 ```
 
 5. After build you will get your static website files located in **dist** folder. Which you can deploy on any static files hosting
@@ -170,10 +170,6 @@ export type CvConfig = {
   };
 };
 ```
-
-## Important!
-
-Currently portfolio.md only supports yarn package manager
 
 ## Examples
 
