@@ -1,5 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
 
 import { ConfigService } from './config-provider';
 import { FileFetcher } from './file-fetcher';
@@ -24,6 +25,7 @@ export default async function mdxRenderer(page: string) {
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm],
+            rehypePlugins: [rehypeHighlight],
           },
         }}
       />

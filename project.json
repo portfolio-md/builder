@@ -5,11 +5,18 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "tsc --build engine/tsconfig.lib.json && tsc-alias -p engine/tsconfig.lib.json"
+        "parallel": false,
+        "commands": [
+          "tsc --build engine/tsconfig.lib.json",
+          "tsc-alias -p engine/tsconfig.lib.json",
+          "copyfiles -f ./engine/src/app/*.css dist/engine/src/app"
+        ]
       }
     },
     "publish": {
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "executor": "nx:run-commands",
       "options": {
         "command": "npm publish"
