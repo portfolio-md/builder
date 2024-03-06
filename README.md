@@ -178,7 +178,7 @@ Example websites created using portfolio.md
 - https://dmytrobaida.github.io
 - https://portfolio-md.github.io
 
-## Technologies used:
+## Built with
 
 - Next.js
 - NX monorepo manager
