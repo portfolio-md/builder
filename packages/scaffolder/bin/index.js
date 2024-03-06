@@ -10,6 +10,7 @@ console.log('Copying files to', dir);
 // copy files
 fs.cpSync(path.join(__dirname, '../dist'), dir, { recursive: true });
 
+// install packages
 console.log('Installing packages');
 
 spawn('npm', ['install'], {
