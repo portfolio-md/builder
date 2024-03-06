@@ -176,7 +176,7 @@ export type CvConfig = {
 Example websites created using portfolio.md
 
 - https://dmytrobaida.github.io
-- https://portfolio-md.github.io
+- https://portfolio-md.github.io/example
 
 ## Built with
 
