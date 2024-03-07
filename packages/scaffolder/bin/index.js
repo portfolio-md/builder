@@ -13,7 +13,7 @@ fs.cpSync(path.join(__dirname, '../dist'), dir, { recursive: true });
 // install packages
 console.log('Installing packages');
 
-spawn('npm', ['install'], {
+spawn('npm', ['install', '--include=optional', 'sharp'], {
   stdio: 'inherit',
 });
 
